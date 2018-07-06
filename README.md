@@ -1,1 +1,2 @@
-# ~/emacs.d/\nUse at own risk
+# ~/emacs.d/
+Use at own risk
