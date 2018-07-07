@@ -18,8 +18,7 @@
 (setq package-enable-at-startup nil) ; dont do it immediately
 (setq package-archives '(("org"       . "http://orgmode.org/elpa/")
 			 ("gnu"       . "http://elpa.gnu.org/packages/")
-			 ("melpa"     . "https://melpa.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")))
+			 ("melpa"     . "https://melpa.org/packages/")))
 (package-initialize)
 
 ;; Bootstap use-package
@@ -45,7 +44,7 @@
 (require 'init-which-key)
  
 ;; Programming modes
-
+(require 'init-rust)
 ;; Pull in my crap
 (require 'bl-fns)
 
