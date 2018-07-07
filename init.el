@@ -44,6 +44,7 @@
 (require 'init-which-key)
  
 ;; Programming modes
+(require 'init-clojure)
 (require 'init-rust)
 ;; Pull in my crap
 (require 'bl-fns)
