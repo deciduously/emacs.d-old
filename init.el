@@ -16,6 +16,9 @@
 (setq-default fill-column 80) ; toggle wrapping text at this column
 (setq initial-scratch-message "Welcome to Emacs")
 (global-display-line-numbers-mode t )
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
 
 ;; use-package setup
 (require 'package)
@@ -36,9 +39,9 @@
 ;; Always download if not available
 (setq use-package-always-ensure t)
 
+;; Pull in ./lisp/*
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-;; TODO FLYCHECK??
-					;(setq-default flycheck-emacs-lisp-load-path load-path)
+(setq-default flycheck-emacs-lisp-load-path load-path)
 
 ;; Start stuff up
 (use-package all-the-icons)
