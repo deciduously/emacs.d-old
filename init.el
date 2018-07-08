@@ -1,3 +1,7 @@
+;;; package -- Summary
+;;; #init.el
+;;; Commentary:
+;;; Code:
 (setq delete-old-versions -1 ) ; delete excess backups silently
 (setq version-control t )
 (setq vc-make-backup-files t )
@@ -9,7 +13,7 @@
 (setq coding-system-for-read 'utf-8 )
 (setq coding-system-for-write 'utf-8)
 (setq sentence-end-double-space nil)
-(setq default-fill-column 80) ; toggle wrapping text at this column
+(setq-default fill-column 80) ; toggle wrapping text at this column
 (setq initial-scratch-message "Welcome to Emacs")
 (global-display-line-numbers-mode t )
 
@@ -39,11 +43,13 @@
 ;; Start stuff up
 (use-package all-the-icons)
 (use-package find-file-in-project)
+(require 'init-flycheck)
 (require 'init-ivy)
 (require 'init-neotree)
 (require 'init-which-key)
- 
-;; Programming modes
+(require 'init-smartparens)
+;; Programming mode
+
 (require 'init-clojure)
 (require 'init-rust)
 ;; Pull in my crap
@@ -62,10 +68,11 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
+    (flycheck-rust flycheck smartparens find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;;; init.el ends here
