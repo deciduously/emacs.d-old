@@ -14,7 +14,7 @@
 (setq coding-system-for-write 'utf-8)
 (setq sentence-end-double-space nil)
 (setq-default fill-column 80) ; toggle wrapping text at this column
-(setq initial-scratch-message "Welcome to Emacs")
+(setq initial-scratch-message "EEEEEEEEEEEmacs...macs...(macs)... Hi Ben." )
 (global-display-line-numbers-mode t )
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
@@ -41,6 +41,8 @@
 
 ;; Pull in ./lisp/*
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+;; Pull in ocp-indent
+(add-to-list 'load-path "/home/ben/.opam/4.07.0/share/emacs/site-lisp")
 (setq-default flycheck-emacs-lisp-load-path load-path)
 
 ;; Start stuff up
@@ -48,11 +50,13 @@
 (use-package find-file-in-project)
 (require 'init-flycheck)
 (require 'init-ivy)
+(require 'init-company)
 (require 'init-neotree)
 (require 'init-which-key)
 (require 'init-smartparens)
 ;; Programming mode
-
+(use-package reason-mode)
+(require 'ocp-indent)
 (require 'init-clojure)
 (require 'init-rust)
 ;; Pull in my crap
@@ -60,9 +64,11 @@
 
 ;; KEYBINDINGS
 
-;; note - [f8] works, I just wanted to remmebed the kbd macro
-(global-set-key (kbd "<f8>") 'neotree-project-dir)
-
+(global-set-key [f8] 'neotree-project-dir)
+(global-set-key (kbd "C-c q") (lambda ()
+	       		       (interactive)
+   			       (other-window -1)))
+(global-set-key (kbd "C-c h") 'company-complete)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
