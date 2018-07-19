@@ -56,6 +56,7 @@
 (require 'init-smartparens)
 ;; Programming mode
 (use-package reason-mode)
+(use-package web-mode)
 (require 'ocp-indent)
 (require 'init-clojure)
 (require 'init-rust)
@@ -77,7 +78,7 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (flycheck-rust flycheck smartparens find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
+    (web-mode flycheck-rust flycheck smartparens find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
