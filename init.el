@@ -57,7 +57,7 @@
 ;; Programming mode
 (use-package reason-mode)
 (use-package web-mode)
-(require 'ocp-indent)
+(use-package ocp-indent)
 (require 'init-clojure)
 (require 'init-rust)
 ;; Pull in my crap
