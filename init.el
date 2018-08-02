@@ -55,6 +55,7 @@
 (require 'init-which-key)
 (require 'init-smartparens)
 ;; Programming mode
+(use-package forth-mode)
 (use-package js2-mode)
 (use-package reason-mode)
 (use-package web-mode)
@@ -79,7 +80,7 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (js2-mode web-mode flycheck-rust flycheck smartparens find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
+    (forth-mode js2-mode web-mode flycheck-rust flycheck smartparens find-file-in-project fuzzy-find-in-project ffip-project-root counsel ivy which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
